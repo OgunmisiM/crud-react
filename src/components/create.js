@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Create = () => {
   const [firstName, setFirstName] = useState('');
@@ -32,7 +32,8 @@ const Create = () => {
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' onChange={(e) => setCheckBox(!checkBox)} />
         </Form.Field>
-        <Button onClick={postData} type='submit'>Submit</Button>
+        <Link to="/read"><Button onClick={postData} type='submit'>Submit</Button></Link>
+
       </Form>
     </div>
   )

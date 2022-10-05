@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Button, Table } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 const Read = () => {
 
@@ -41,6 +42,7 @@ const Read = () => {
             <Table.HeaderCell>LastName</Table.HeaderCell>
             <Table.HeaderCell>Checked</Table.HeaderCell>
             <Table.HeaderCell>Update</Table.HeaderCell>
+            <Table.HeaderCell>Delete</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -51,7 +53,8 @@ const Read = () => {
                 <Table.Cell>{data.firstName}</Table.Cell>
                 <Table.Cell>{data.lastName}</Table.Cell>
                 <Table.Cell>{data.checkBox ? 'Checked' : 'Unchecked'}</Table.Cell>
-                <Table.Cell><Button onClick={() => setData(data)}>Update</Button></Table.Cell>
+                <Table.Cell><Link to="/update"><Button onClick={() => setData(data)}>Update</Button>
+                </Link></Table.Cell>
                 <Table.Cell><Button onClick={() => onDelete(data.id)}>Delete</Button></Table.Cell>
               </Table.Row>
             )

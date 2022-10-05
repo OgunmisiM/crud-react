@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Update = () => {
   const [firstName, setFirstName] = useState('');
@@ -39,7 +39,7 @@ const Update = () => {
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' checked={checkBox} onChange={(e) => setCheckBox(!checkBox)} />
         </Form.Field>
-        <Button type='submit' onClick={updateAPIData}>Update</Button>
+        <Link to="/read"><Button onClick={updateAPIData} type='submit'>Update</Button></Link>
       </Form>
     </div>
   )
